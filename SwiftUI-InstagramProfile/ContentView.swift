@@ -8,25 +8,66 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selected = 5
     
+    private let userList: [ListItem] = [
+        ListItem(
+            image: "igor",
+            userName: "developer13"),
+        ListItem(
+            image: "eminem",
+            userName: "eminem"),
+        ListItem(
+            image: "drake",
+            userName: "kingDrake"),
+        ListItem(
+            image: "clark",
+            userName: "emilia"),
+        ListItem(
+            image: "margo",
+            userName: "margot_robbie"),
+        ListItem(
+            image: "messi",
+            userName: "lionelMessi"),
+        ListItem(
+            image: "ronaldo",
+            userName: "ronaldo07"),
+    ]
+    
+    // ...
+    
+    //    @State private var selected = 5
+    //
+    //    var body: some View {
+    //        NavigationView {
+    //            TabView(selection: $selected) {
+    //                Text("Home page")
+    //                    .tabItem { Image(systemName: "house") }.tag(1)
+    //                Text("Search")
+    //                    .tabItem { Image(systemName: "magnifyingglass")}.tag(2)
+    //                Text("Add post")
+    //                    .tabItem { Image(systemName: "plus.square")}.tag(3)
+    //                Text("Like")
+    //                    .tabItem { Image(systemName: "heart.fill") }.tag(4)
+    //
+    //                //Profile tab
+    //                MainView()
+    //                    .tabItem { Image(systemName: "person.fill") }.tag(5)
+    //            }
+    //            .navigationBarTitle("User_name", displayMode: .inline)
+    //        }
+    //    }
     var body: some View {
         NavigationView {
-            TabView(selection: $selected) {
-                Text("Home page")
-                    .tabItem { Image(systemName: "house") }.tag(1)
-                Text("Search")
-                    .tabItem { Image(systemName: "magnifyingglass")}.tag(2)
-                Text("Add post")
-                    .tabItem { Image(systemName: "plus.square")}.tag(3)
-                Text("Like")
-                    .tabItem { Image(systemName: "heart.fill") }.tag(4)
-                
-                //Profile tab
-                MainView()
-                    .tabItem { Image(systemName: "person.fill") }.tag(5)
+            List(userList) { userItem in
+                NavigationLink(destination: MainView(userItem: userItem)) {
+                    HStack{
+                        EmojiCircleView(emojiItem: userItem)
+                        Text(userItem.userName).font(.headline)
+                    }
+                    .padding(5)
+                }
             }
-            .navigationBarTitle("User_name", displayMode: .inline)
+            .navigationBarTitle("Users")
         }
     }
 }
@@ -54,10 +95,10 @@ struct InfoVStackView: View {
                 VStack {
                     Text("\(info.number)")
                         .bold()
-                        .font(.system(size: 14))
+                        .font(.system(size: 12))
                     Text(info.label)
                         .bold()
-                        .font(.system(size: 13))
+                        .font(.system(size: 11))
                 }
                 .padding(.horizontal, 6)
             }
@@ -66,11 +107,17 @@ struct InfoVStackView: View {
 }
 
 struct TopView: View {
+    let userItem: ListItem
     var body: some View {
         HStack {
-            Image(systemName: "person.crop.circle.badge.plus")
-                .font(.system(size: 60))
-                .padding(.trailing, 50)
+            Image(userItem.image)
+                .resizable()
+                    .frame(width: 70.0, height: 70.0)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white,
+                                             lineWidth: 2))
+                    .shadow(radius: 4)
+                .padding(.trailing, 10)
             InfoVStackView()
         }
         .padding(.top, 20)
@@ -78,28 +125,26 @@ struct TopView: View {
 }
 
 struct MainView: View {
+    let userItem: ListItem
     var body: some View {
         ScrollView(.vertical) {
-            TopView()
-            BioView()
+            TopView(userItem: userItem)
+            BioView(userName: userItem)
             BioButtonView()
             StoriesView()
-            //            HStack{
-            //                EditButtonView()
-            //                WriteButtonView()
-            //            }
             HButtonView()
             ImageView()
-            // CompleteYourProfileView()
         }
+        .navigationBarTitle(userItem.userName, displayMode: .inline)
     }
 }
 
 struct BioView: View {
+    let userName: ListItem
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("User_name")
+                Text(userName.userName)
                     .bold()
                 Text("Blogger")
                     .foregroundColor(Color(.lightGray))
@@ -197,21 +242,21 @@ struct StoriesView: View {
     
     var body: some View {
         ScrollView(.horizontal) {
-        HStack {
-            ForEach(storiesImages, id: \.self) { stories in
-                VStack{
-                    Image(stories).resizable()
-                        .frame(width: 50.0, height: 50.0)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white,
-                                                   lineWidth: 2))
-                        .shadow(radius: 4)
-                    Text(stories)
-                        .font(.system(size: 10))
+            HStack {
+                ForEach(storiesImages, id: \.self) { stories in
+                    VStack{
+                        Image(stories).resizable()
+                            .frame(width: 50.0, height: 50.0)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.white,
+                                                     lineWidth: 2))
+                            .shadow(radius: 4)
+                        Text(stories)
+                            .font(.system(size: 10))
+                    }
+                    .padding(.horizontal, 10)
                 }
-                .padding(.horizontal, 10)
             }
-        }
         }
     }
     
@@ -240,7 +285,7 @@ struct HButtonView: View {
 
 struct LineView: View {
     var body: some View {
-       VStack {
+        VStack {
             EmptyView()
         }
     }
@@ -261,3 +306,25 @@ struct ImageView: View {
 
 
 
+// New
+
+struct ListItem: Identifiable {
+    let id = UUID()
+    let image: String
+    let userName: String
+}
+
+struct EmojiCircleView: View {
+    let emojiItem: ListItem
+    var body: some View {
+        ZStack {
+            Image(emojiItem.image)
+                    .resizable()
+                    .frame(width: 60.0, height: 60.0)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white,
+                                             lineWidth: 2))
+                    .shadow(radius: 4)
+        }
+    }
+}
