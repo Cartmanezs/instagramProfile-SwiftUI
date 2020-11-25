@@ -13,6 +13,16 @@
 		CE4004FC256D13AC00C74690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4004FB256D13AC00C74690 /* Assets.xcassets */; };
 		CE4004FF256D13AC00C74690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4004FE256D13AC00C74690 /* Preview Assets.xcassets */; };
 		CE400502256D13AC00C74690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE400500256D13AC00C74690 /* LaunchScreen.storyboard */; };
+		CE40050C256E76C900C74690 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40050B256E76C900C74690 /* MainView.swift */; };
+		CE40050F256E778300C74690 /* InfoUserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40050E256E778300C74690 /* InfoUserStatus.swift */; };
+		CE400519256E780900C74690 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE400518256E780900C74690 /* TopView.swift */; };
+		CE40051C256E784A00C74690 /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40051B256E784A00C74690 /* BioView.swift */; };
+		CE40051F256E78CF00C74690 /* BioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40051E256E78CF00C74690 /* BioButtonView.swift */; };
+		CE400522256E78F100C74690 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE400521256E78F100C74690 /* StoriesView.swift */; };
+		CE400525256E791A00C74690 /* HButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE400524256E791A00C74690 /* HButtonView.swift */; };
+		CE400528256E793500C74690 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE400527256E793500C74690 /* ImageView.swift */; };
+		CE40052C256E79A900C74690 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40052B256E79A900C74690 /* ListItem.swift */; };
+		CE400531256E79DF00C74690 /* UserImageCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE400530256E79DF00C74690 /* UserImageCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		CE4004FE256D13AC00C74690 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE400501256D13AC00C74690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE400503256D13AC00C74690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE40050B256E76C900C74690 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CE40050E256E778300C74690 /* InfoUserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoUserStatus.swift; sourceTree = "<group>"; };
+		CE400518256E780900C74690 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		CE40051B256E784A00C74690 /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
+		CE40051E256E78CF00C74690 /* BioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioButtonView.swift; sourceTree = "<group>"; };
+		CE400521256E78F100C74690 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
+		CE400524256E791A00C74690 /* HButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButtonView.swift; sourceTree = "<group>"; };
+		CE400527256E793500C74690 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		CE40052B256E79A900C74690 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		CE400530256E79DF00C74690 /* UserImageCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +76,11 @@
 		CE4004F4256D13A800C74690 /* SwiftUI-InstagramProfile */ = {
 			isa = PBXGroup;
 			children = (
-				CE4004F5256D13A800C74690 /* AppDelegate.swift */,
-				CE4004F7256D13A800C74690 /* SceneDelegate.swift */,
+				CE40052A256E799100C74690 /* UsersList */,
+				CE40050A256E769E00C74690 /* PageView */,
 				CE4004F9256D13A800C74690 /* ContentView.swift */,
-				CE4004FB256D13AC00C74690 /* Assets.xcassets */,
 				CE400500256D13AC00C74690 /* LaunchScreen.storyboard */,
+				CE400535256E7A9100C74690 /* SupportFiles */,
 				CE400503256D13AC00C74690 /* Info.plist */,
 				CE4004FD256D13AC00C74690 /* Preview Content */,
 			);
@@ -73,6 +93,104 @@
 				CE4004FE256D13AC00C74690 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE40050A256E769E00C74690 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				CE400534256E7A3D00C74690 /* Model */,
+				CE400517256E77E800C74690 /* ImageView */,
+				CE400516256E77DF00C74690 /* HButtonView */,
+				CE400515256E77D600C74690 /* StoriesView */,
+				CE400514256E77D000C74690 /* BioButtonView */,
+				CE400513256E77CA00C74690 /* BioView */,
+				CE400512256E77BA00C74690 /* TopView */,
+				CE40050B256E76C900C74690 /* MainView.swift */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
+		CE400512256E77BA00C74690 /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				CE400518256E780900C74690 /* TopView.swift */,
+			);
+			path = TopView;
+			sourceTree = "<group>";
+		};
+		CE400513256E77CA00C74690 /* BioView */ = {
+			isa = PBXGroup;
+			children = (
+				CE40051B256E784A00C74690 /* BioView.swift */,
+			);
+			path = BioView;
+			sourceTree = "<group>";
+		};
+		CE400514256E77D000C74690 /* BioButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				CE40051E256E78CF00C74690 /* BioButtonView.swift */,
+			);
+			path = BioButtonView;
+			sourceTree = "<group>";
+		};
+		CE400515256E77D600C74690 /* StoriesView */ = {
+			isa = PBXGroup;
+			children = (
+				CE400521256E78F100C74690 /* StoriesView.swift */,
+			);
+			path = StoriesView;
+			sourceTree = "<group>";
+		};
+		CE400516256E77DF00C74690 /* HButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				CE400524256E791A00C74690 /* HButtonView.swift */,
+			);
+			path = HButtonView;
+			sourceTree = "<group>";
+		};
+		CE400517256E77E800C74690 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				CE400527256E793500C74690 /* ImageView.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		CE40052A256E799100C74690 /* UsersList */ = {
+			isa = PBXGroup;
+			children = (
+				CE40052F256E79D200C74690 /* UserImageCircleView */,
+				CE40052B256E79A900C74690 /* ListItem.swift */,
+			);
+			path = UsersList;
+			sourceTree = "<group>";
+		};
+		CE40052F256E79D200C74690 /* UserImageCircleView */ = {
+			isa = PBXGroup;
+			children = (
+				CE400530256E79DF00C74690 /* UserImageCircleView.swift */,
+			);
+			path = UserImageCircleView;
+			sourceTree = "<group>";
+		};
+		CE400534256E7A3D00C74690 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE40050E256E778300C74690 /* InfoUserStatus.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE400535256E7A9100C74690 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CE4004F5256D13A800C74690 /* AppDelegate.swift */,
+				CE4004F7256D13A800C74690 /* SceneDelegate.swift */,
+				CE4004FB256D13AC00C74690 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +263,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE40052C256E79A900C74690 /* ListItem.swift in Sources */,
+				CE40050F256E778300C74690 /* InfoUserStatus.swift in Sources */,
 				CE4004F6256D13A800C74690 /* AppDelegate.swift in Sources */,
+				CE400522256E78F100C74690 /* StoriesView.swift in Sources */,
+				CE400531256E79DF00C74690 /* UserImageCircleView.swift in Sources */,
+				CE40050C256E76C900C74690 /* MainView.swift in Sources */,
+				CE400528256E793500C74690 /* ImageView.swift in Sources */,
 				CE4004F8256D13A800C74690 /* SceneDelegate.swift in Sources */,
+				CE400525256E791A00C74690 /* HButtonView.swift in Sources */,
+				CE400519256E780900C74690 /* TopView.swift in Sources */,
+				CE40051C256E784A00C74690 /* BioView.swift in Sources */,
 				CE4004FA256D13A800C74690 /* ContentView.swift in Sources */,
+				CE40051F256E78CF00C74690 /* BioButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
